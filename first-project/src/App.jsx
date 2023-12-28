@@ -1,19 +1,21 @@
 import './App.css'
 import Product from './Product'
+import User from './User'
 
 function App() {
   
 
   return (
     <div>
-      <h1>Hello There</h1>
-      <h1>Hello</h1>
+      <h1>Main Component</h1>
+      
+      {/* <Product name="Iphone 14" price="20000" specs={{ram:"2gb",screen:"19cm"}} category={["Electronics","Mobile"]}/>
 
-      <Product/>
+      <Product name="Samsung S21" price="45000" specs={{ram:"4gb",screen:"21cm"}} category={["Electronics","Mobile"]}/> */}
 
-      <Product/>
-      <Product/>
-      <Product/>
+      <User name="Sabin" age={26}/>
+
+     
 
     </div>
   )

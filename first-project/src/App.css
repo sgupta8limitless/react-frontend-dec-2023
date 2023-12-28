@@ -1,0 +1,15 @@
+.product
+{
+    width: fit-content;
+    padding: 20px;
+    background-color: lightgray;
+    margin: 10px;
+}
+
+.user 
+{
+    background-color: skyblue;
+    padding: 20px;
+    margin: 20px;
+    width: fit-content;
+}
