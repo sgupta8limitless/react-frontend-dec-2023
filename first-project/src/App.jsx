@@ -1,19 +1,80 @@
+import { useState } from 'react'
 import './App.css'
-import Product from './Product'
-import User from './User'
+import Country from './Country'
+// import Product from './Product'
+// import User from './User'
 
 function App() {
+
+  let [isLoggedIn,setIsLoggedIn] = useState(true)
+
+
+  let [countries,setCountries] = useState(
+    [
+      {name:"India",capital:"New Delhi",pop:"1.4B"},
+      {name:"Australia",capital:"Canberra",pop:"330M"},
+      {name:"France",capital:"Paris",pop:"67.5M"}
+    ]
+    )
+
+    function loadNewCountries()
+    {
+      setCountries(
+        [
+          {name:"USA",capital:"Washington DC",pop:"1.4B"},
+          {name:"Sri Lanka",capital:"Colombo",pop:"330M"},
+          {name:"UAE",capital:"Dubai",pop:"67.5M"}
+        ]
+        )
+    }
+
+   
   
 
   return (
     <div>
       <h1>Main Component</h1>
+
+
+      {
+
+          isLoggedIn==false?
+           (<h1>Please Log IN</h1>)
+           :
+           
+           countries.map((country)=>{
+
+            return (
+              <Country name={country.name} capital={country.capital} pop={country.pop}/>
+            )
+  
+          })
+
+      }
+
+
+
+
+      <button onClick={loadNewCountries}>Load New Countries</button>
+
       
-      {/* <Product name="Iphone 14" price="20000" specs={{ram:"2gb",screen:"19cm"}} category={["Electronics","Mobile"]}/>
+      {/* {
 
-      <Product name="Samsung S21" price="45000" specs={{ram:"4gb",screen:"21cm"}} category={["Electronics","Mobile"]}/> */}
+        countries.map((country)=>{
 
-      <User name="Sabin" age={26}/>
+          return (
+            <Country name={country.name} capital={country.capital} pop={country.pop}/>
+          )
+
+        })
+
+        
+
+      } */}
+      
+
+
+
 
      
 

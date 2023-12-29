@@ -13,3 +13,11 @@
     margin: 20px;
     width: fit-content;
 }
+
+.country 
+{
+    width: fit-content;
+    padding: 20px;
+    background-color: lightblue;
+    margin: 10px;
+}
