@@ -1,0 +1,64 @@
+
+.main
+{
+  background-color: rgb(240, 240, 240);
+  padding: 20px 100px;
+}
+
+.products
+{
+  width: 100%;
+  padding: 20px 0px;
+  
+  display: flex;
+  column-gap: calc(25%/4);
+  row-gap: 30px;
+  flex-wrap: wrap;
+  
+}
+
+.product 
+{
+  width: 15%;
+  padding: 10px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+  border-radius: 10px;
+  
+}
+
+.image-wrapper 
+{
+  width: 100%;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.p-title
+{
+  font-size: 18px;
+}
+
+.p-image
+{
+  width: 100%;
+}
+
+@media screen and (max-width:400px) {
+
+  .main
+  {
+    padding: 20px 30px;
+  }
+
+  .product 
+  {
+    width: 100%;
+    
+  }
+  
+}
