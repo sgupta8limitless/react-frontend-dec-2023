@@ -43,10 +43,10 @@ function Products(){
     <div className="products">
 
         {
-            products.map((product)=>{
+            products.map((product,index)=>{
 
                 return (
-                    <div className="product">
+                    <div className="product" key={product.id}>
                         <div className="image-wrapper">
                             <img className="p-image" src={product.image} alt="product" />
                         </div>
