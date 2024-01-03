@@ -1,0 +1,65 @@
+.nav
+{
+  width: 100%;
+  padding: 20px;
+  background-color: darkgray;
+}
+
+.nav>ul{
+  display: flex;
+  column-gap: 10px;
+  list-style-type: none;
+}
+
+.link
+{
+  text-decoration: none;
+}
+
+.about 
+{
+  padding: 10px;
+  background-color: skyblue;
+}
+
+.product
+{
+  padding: 20px;
+  width: 100%;
+  background-color: lightgray;
+  display: flex;
+  column-gap: 2%;
+}
+
+.prod 
+{
+  width: 20%;
+  height: 300px;
+  background-color: red;
+  font-size: 30px;
+  /* padding: 10px; */
+}
+
+.service
+{
+  padding: 20px;
+  width: 100%;
+  background-color: lightgray;
+  display: flex;
+  column-gap: 2%;
+}
+
+.serv
+{
+  width: 20%;
+  height: 300px;
+  background-color: yellowgreen;
+  font-size: 30px;
+  /* padding: 10px; */
+}
+
+.refdemo
+{
+  padding: 40px;
+  background-color: lightgreen;
+}

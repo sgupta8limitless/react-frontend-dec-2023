@@ -39,6 +39,9 @@ function App() {
       <input type='text' name='email' onChange={handleInput} placeholder='Enter Email' value={details.email}/>
 
       <button onClick={handleSubmit}>Register</button>
+
+
+      
     </div>
     
     </>
