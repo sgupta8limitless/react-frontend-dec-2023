@@ -1,0 +1,19 @@
+.product 
+{
+    padding: 20px;
+    width: fit-content;
+    background-color: darkgray;
+}
+
+.category 
+{
+    padding: 20px;
+    width: fit-content;
+    background-color: lightyellow;
+}
+
+.demo
+{
+    background-color: yellow;
+    padding: 30px;
+}
