@@ -1,0 +1,53 @@
+.form-box
+{
+    width: 100%;
+    height: 100vh;
+    padding: 30px;
+    background-color: #2c2c2c;
+    display: flex;
+    align-items: center;
+    color: white;
+}
+
+.form{
+    width: 100%;
+    /* background-color: red; */
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    align-items: flex-start;
+}
+
+.inp 
+{
+    height: 45px;
+    width: 100%;
+    border: 1px solid gray;
+    outline:none;
+    font-size: 15px;
+    text-indent: 20px;
+    border-radius: 10px;
+
+}
+
+.btn 
+{
+    padding: 14px 40px;
+    border-radius: 10px;
+    background-color: #ec5f13;
+    color: white;
+    border: none;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.btn:hover 
+{
+    background-color: #e9773a;
+}
+
+.link
+{
+   color: #ec5f13;
+}
