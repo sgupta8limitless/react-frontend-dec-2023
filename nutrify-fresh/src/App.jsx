@@ -5,24 +5,41 @@ import Login from './components/Login'
 import Notfound from './components/Notfound'
 import Track from './components/Track'
 
+import Private from './components/Private'
+
+import { UserContext } from './contexts/UserContext'
+import { useState } from 'react'
+import Demo from './components/Demo'
+
+
 function App() {
  
+  const [loggedUser,setLoggedUser] = useState(localStorage.getItem("nutrify-user"));
+
   return (
     <>
 
-        <BrowserRouter>
+    
+      <UserContext.Provider value={{loggedUser,setLoggedUser}}>
+
+          <BrowserRouter>   
 
               <Routes>
 
                   <Route path='/' element={<Login/>}/>
                   <Route path='/login' element={<Login/>}/>
                   <Route path='/register' element={<Register/>}/>
-                  <Route path='/track' element={<Track/>}/>
+                  <Route path='/track' element={<Private Component={Track}/>}/>
+                  <Route path='/demo' element={<Private Component={Demo}/>}/>
+
                   <Route path='*' element={<Notfound/>}/>
 
               </Routes>
         
-        </BrowserRouter>
+            </BrowserRouter>
+       
+
+        </UserContext.Provider>
 
         
     </>

@@ -1,7 +1,13 @@
-import { useState } from "react"
+import { useState,useContext, useEffect } from "react"
+import { UserContext } from "../contexts/UserContext";
 import { Link,useNavigate } from "react-router-dom"
 export default function Login()
 {
+
+
+    const loggedData = useContext(UserContext);
+
+    
 
 
     const navigate = useNavigate();
@@ -15,6 +21,8 @@ export default function Login()
         type:"invisible-msg",
         text:"Dummy Msg"
     })
+
+    
 
     function handleInput(event)
     {
@@ -56,9 +64,13 @@ export default function Login()
         })
         .then((data)=>{
 
+           
+
             if(data.token!==undefined)
             {
                 localStorage.setItem("nutrify-user",JSON.stringify(data));
+
+                loggedData.setLoggedUser(data);
 
                 navigate("/track");
             }
