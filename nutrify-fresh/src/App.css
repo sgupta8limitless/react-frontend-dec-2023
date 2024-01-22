@@ -89,3 +89,76 @@ a
   border-radius: 5px;
   opacity: 0;
 }
+
+
+/* track page css  */
+
+
+.search 
+{
+  width: 100%;
+  padding: 10px 0px;
+  /* background-color: gray; */
+  /* border-radius: 5px; */
+}
+
+.track-container 
+{
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.search-inp
+{
+  width: 100%;
+  height: 45px;
+  text-indent: 10px;
+  outline: none;
+  border-radius: 5px;
+  border: 1px solid gray;
+  font-size: 18px;
+}
+
+.search 
+{
+  position: relative;
+}
+
+.search-results
+{
+  width: 100%;
+  padding: 10px 5px;
+  background-color: gray;
+  margin-top: 10px;
+  position:absolute;
+}
+
+.food 
+{
+  width: 100%;
+  padding: 30px 0px;
+  /* background-color: red; */
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 10px;
+}
+
+.food-img 
+{
+  width: 100%;
+  height: auto;
+  /* background-color: blue; */
+ 
+  border-radius: 5px;
+}
+
+.food-image 
+{
+  width: 100%;
+}
+
+.nutrient{
+  width: 50%;
+  padding: 10px 0px;
+  /* background-color: green; */
+}
