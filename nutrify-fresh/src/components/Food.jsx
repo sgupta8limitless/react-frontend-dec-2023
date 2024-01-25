@@ -1,44 +1,88 @@
 import { useEffect, useState } from "react"
+import { UserContext } from "../contexts/UserContext";
+import { useContext } from "react";
 
 export default function Food(props)
 {
 
-    const [quantity,setQuantity] = useState(100);
+    const [eatenQuantity,setEatenQuantity] = useState(100);
     const [food,setFood] = useState({});
     const [foodInitial,setFoodInital] = useState({});
+    let loggedData = useContext(UserContext);
+
+
     
 
     useEffect(()=>{
        setFood(props.food);
        setFoodInital(props.food);
+
+       console.log(loggedData);
+       
     },[props.food])
 
-
-    function handleInput(event)
-    {
-        setQuantity(Number(event.target.value));
-    }
   
-
-    function calculateMacros()
+    function calculateMacros(event)
     {
+
+
+            if(event.target.value.length!=0)
+            {
+                let quantity = Number(event.target.value);
+                setEatenQuantity(quantity);
+
+                let copyFood = {...food};
+
+                copyFood.protein = (foodInitial.protein*quantity)/100;
+                copyFood.carbohydrates = (foodInitial.carbohydrates*quantity)/100;
+                copyFood.fat = (foodInitial.fat*quantity)/100;
+                copyFood.fiber = (foodInitial.fiber*quantity)/100;
+                copyFood.calories = (foodInitial.calories*quantity)/100;
+
+                setFood(copyFood);
+            }
+
+            
+
         
+    }
 
-            let copyFood = {...food};
 
-            copyFood.protein = (foodInitial.protein*quantity)/100;
-            copyFood.carbohydrates = (foodInitial.carbohydrates*quantity)/100;
-            copyFood.fat = (foodInitial.fat*quantity)/100;
-            copyFood.fiber = (foodInitial.fiber*quantity)/100;
-            copyFood.calories = (foodInitial.calories*quantity)/100;
+    function trackFoodItem()
+    {
+        let trackedItem = {
+            userId:loggedData.loggedUser.userid,
+            foodId:food._id,
+            details:{
+                protein:food.protein,
+                carbohydrates:food.carbohydrates,
+                fat:food.fat,
+                fiber:food.fiber,
+                calories:food.calories
+            },
+            quantity:eatenQuantity
+        }
 
-            console.log(copyFood);
 
-            setFood(copyFood);
+        console.log(trackedItem);
 
-           
-        
-        
+        fetch("http://localhost:8000/track",{
+            method:"POST",
+            body:JSON.stringify(trackedItem),
+            headers:{
+                "Authorization":`Bearer ${loggedData.loggedUser.token}`,
+                "Content-Type":"application/json"
+            }
+        })
+        .then((response)=>response.json())
+        .then((data)=>{
+            console.log(data);
+        })
+        .catch((err)=>{
+            console.log(err);
+        })
+
+
     }
 
     return (
@@ -48,7 +92,7 @@ export default function Food(props)
                 <img className="food-image" src={food.imageUrl}/>
             </div>
 
-            <h3>{food.name} ({food.calories} Kcal for {quantity}G)</h3>
+            <h3>{food.name} ({food.calories} Kcal for {eatenQuantity}G)</h3>
 
             <div className="nutrient">
                 <p className="n-title">Protein</p>
@@ -70,12 +114,21 @@ export default function Food(props)
                 <p className="n-value">{food.fiber}g</p>
             </div>
 
-            <input type="number" onChange={handleInput}
-             className="inp" placeholder="Quantity in Gms"/>
 
-             <button onClick={calculateMacros}>Calculate</button>
+            <div className="track-control">
 
-            <button className="btn">Track This Food</button>
+                <input type="number" onChange={calculateMacros}
+                className="inp" placeholder="Quantity in Gms"/>
+
+                <button className="btn" onClick={trackFoodItem}>Track</button>
+
+
+            </div>
+
+            
+
+            
+
 
 
 

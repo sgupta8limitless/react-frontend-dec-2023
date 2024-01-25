@@ -162,3 +162,36 @@ a
   padding: 10px 0px;
   /* background-color: green; */
 }
+
+.track-control
+{
+  display: flex;
+  width: 100%;
+  column-gap: 2%;
+}
+
+.track-control > .inp
+{
+  width: 68%;
+}
+
+.track-control > .btn 
+{
+  width: 30%;
+  padding:10px 0px;
+}
+
+
+.diet-container
+{
+  align-items: flex-start;
+  row-gap: 20px;
+  flex-direction: column;
+}
+
+.item 
+{
+  width: 100%;
+  padding: 20px;
+  background-color: #2f2f2f;
+}

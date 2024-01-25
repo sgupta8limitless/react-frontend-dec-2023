@@ -9,6 +9,7 @@ import Private from './components/Private'
 
 import { UserContext } from './contexts/UserContext'
 import { useEffect, useState } from 'react'
+import Diet from './components/Diet'
 
 
 
@@ -33,6 +34,7 @@ function App() {
                   <Route path='/login' element={<Login/>}/>
                   <Route path='/register' element={<Register/>}/>
                   <Route path='/track' element={<Private Component={Track}/>}/>
+                  <Route path='/diet' element={<Private Component={Diet}/>}/>
                   
                   <Route path='*' element={<Notfound/>}/>
 
