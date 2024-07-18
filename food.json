@@ -1,0 +1,82 @@
+[
+    {
+      "name": "Apple",
+      "calories": 52,
+      "protein": 0.3,
+      "fat": 0.2,
+      "fiber": 2.4,
+      "carbohydrates": 14
+    },
+    {
+      "name": "Banana",
+      "calories": 89,
+      "protein": 1.1,
+      "fat": 0.3,
+      "fiber": 2.6,
+      "carbohydrates": 23
+    },
+    {
+      "name": "Chicken Breast",
+      "calories": 165,
+      "protein": 31,
+      "fat": 3.6,
+      "fiber": 0,
+      "carbohydrates": 0
+    },
+    {
+      "name": "Broccoli",
+      "calories": 55,
+      "protein": 3.7,
+      "fat": 0.6,
+      "fiber": 2.4,
+      "carbohydrates": 11
+    },
+    {
+      "name": "Almonds",
+      "calories": 579,
+      "protein": 21,
+      "fat": 49,
+      "fiber": 12.5,
+      "carbohydrates": 22
+    },
+    {
+      "name": "Salmon",
+      "calories": 208,
+      "protein": 20,
+      "fat": 13,
+      "fiber": 0,
+      "carbohydrates": 0
+    },
+    {
+      "name": "Oats",
+      "calories": 389,
+      "protein": 16.9,
+      "fat": 6.9,
+      "fiber": 10.6,
+      "carbohydrates": 66.3
+    },
+    {
+      "name": "Egg",
+      "calories": 155,
+      "protein": 13,
+      "fat": 11,
+      "fiber": 0,
+      "carbohydrates": 1.1
+    },
+    {
+      "name": "Spinach",
+      "calories": 23,
+      "protein": 2.9,
+      "fat": 0.4,
+      "fiber": 2.2,
+      "carbohydrates": 3.6
+    },
+    {
+      "name": "Sweet Potato",
+      "calories": 86,
+      "protein": 1.6,
+      "fat": 0.1,
+      "fiber": 3,
+      "carbohydrates": 20
+    }
+  ]
